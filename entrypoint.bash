@@ -1,5 +1,6 @@
-#!/usr/bin/env bash
 chmod +x entrypoint.bash
+
+#!/usr/bin/env bash
 
 echo "made it into entrypoint"
 
