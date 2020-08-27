@@ -4,7 +4,7 @@ inputs:
   repo:
     description: 'Name of the repo.'
     required: true
-    default: ${{ github.repo. }}
+    default: ${{ github.repo }}
 
 runs:
   using: 'docker'
