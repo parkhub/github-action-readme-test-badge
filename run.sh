@@ -1,12 +1,12 @@
 #!/bin/bash
 
-pwd
+# pwd
 
-chmod -x updateBadge.py
+# chmod -x updateBadge.py
 
 echo "made it into entrypoint"
 
-ls -l -a
+# ls -l -a
 
 # python3 ./updateBadge.py
 PYTHON_CODE=$(cat <<END
