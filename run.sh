@@ -6,4 +6,4 @@ echo "made it into entrypoint"
 
 ls -l -a
 
-python3 updateBadge.py
+python3 ./updateBadge.py
