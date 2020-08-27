@@ -10,7 +10,10 @@ LABEL \
   "com.github.actions.icon"="award" \
   "com.github.actions.color"="orange"
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache \
+  bash \
+  openssh-client && \
+  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 ADD entrypoint.bash /
 
