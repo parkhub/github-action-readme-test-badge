@@ -1,10 +1,10 @@
-FROM mhart/alpine-node
-LABEL maintainer Logan Fisher "logan.fisher@parkhub.com"
+FROM python:3
+LABEL maintainer Pat Dayton "pat.dayton@parkhub.com"
 
-RUN apk add --update git
+# RUN apk add --update git
 
-COPY run.sh updateBadge.py ./
+COPY updateBadge.py ./
 
-RUN npm install --global release-it
+# RUN npm install --global release-it
 
-ENTRYPOINT ["sh", "/run.sh"]
+ENTRYPOINT ["python", "updateBadge.py"]
