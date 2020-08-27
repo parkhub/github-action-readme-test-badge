@@ -5,15 +5,8 @@ inputs:
     description: 'Name of the repo.'
     required: true
     default: ${{ github.repo }}
-# runs:
-#   using: 'docker'
-#   image: 'Dockerfile'
-#   args:
-#     - ${{ inputs.repo }}
 runs:
-  using: "composite"
-  steps: 
-    - run: ls
-      shell: bash
-    - run: $/run.sh
-      shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repo }}
