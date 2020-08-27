@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pwd
+
 chmod -x updateBadge.py
 
 echo "made it into entrypoint"

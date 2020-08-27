@@ -7,5 +7,6 @@ COPY run.sh ./
 COPY updateBadge.py ./
 
 RUN ls
+RUN pwd
 
 ENTRYPOINT ["sh", "/run.sh"]
