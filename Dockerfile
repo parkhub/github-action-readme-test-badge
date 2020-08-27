@@ -1,10 +1,10 @@
 FROM python:3.7
 LABEL maintainer Pat Dayton "pat.dayton@parkhub.com"
 
-# RUN chmod -x updateBadge.py
+# RUN apk add --update git
 
 COPY run.sh updateBadge.py ./
 
 RUN ls
 
-CMD ["python3", "/updateBadge.py"]
+ENTRYPOINT ["sh", "/run.sh"]
