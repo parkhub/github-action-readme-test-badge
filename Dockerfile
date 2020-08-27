@@ -1,7 +1,7 @@
-FROM python:3.7-slim
+FROM python:3.7
 LABEL maintainer Pat Dayton "pat.dayton@parkhub.com"
 
-RUN apk add --update git
+# RUN apk add --update git
 
 COPY run.sh updateBadge.py ./
 
