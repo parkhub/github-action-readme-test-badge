@@ -1,10 +1,10 @@
-FROM python:3
+FROM python:3.7-slim
 LABEL maintainer Pat Dayton "pat.dayton@parkhub.com"
 
-# RUN apk add --update git
+RUN apk add --update git
 
-COPY updateBadge.py ./
+COPY run.sh updateBadge.py ./
 
-# RUN npm install --global release-it
+RUN ls
 
-ENTRYPOINT ["python", "updateBadge.py"]
+ENTRYPOINT ["sh", "/run.sh"]
