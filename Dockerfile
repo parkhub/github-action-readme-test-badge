@@ -1,20 +1,10 @@
-FROM docker.io/alpine:3.11
+FROM mhart/alpine-node
+LABEL maintainer Logan Fisher "logan.fisher@parkhub.com"
 
-LABEL \
-  "version"="0.0.0" \
-  "name"="ParkHub Update Integration Test Badge" \
-  "repository"="https://github.com/parkhub/github-action-readme-test-badge" \
-  "maintainer"="ParkHub" \
-  "com.github.actions.name"="Integrations Tests" \
-  "com.github.actions.description"="Run integrations tests." \
-  "com.github.actions.icon"="award" \
-  "com.github.actions.color"="orange"
+RUN apk add --update git
 
-RUN apk add --no-cache \
-  bash \
-  openssh-client && \
-  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+COPY run.sh updateBadge.py ./
 
-ADD entrypoint.bash /
+RUN npm install --global release-it
 
-ENTRYPOINT ["/entrypoint.bash"]
+ENTRYPOINT ["sh", "/run.sh"]
