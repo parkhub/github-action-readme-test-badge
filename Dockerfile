@@ -1,3 +1,3 @@
-FROM python:3.7
+FROM python:latest
 COPY run.sh ./
 ENTRYPOINT ["sh", "/run.sh"]
